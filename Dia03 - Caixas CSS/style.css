@@ -1,0 +1,21 @@
+.cabecalho{
+    background-color: red;
+    width: 80vw;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.caixaG{
+    background-color: blueviolet;
+    width: 90vw;
+    margin: 10px auto;
+}
+
+.caixa{
+    background-color: red;
+    height: 100px;
+    width: 1vw 1.25vw;
+    margin: 10px auto;
+    padding: 10px auto;
+    
+}
