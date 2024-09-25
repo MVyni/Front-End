@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <div>
+        <h1>Cadastro de carros</h1>
+        <form>
+            <div>
+                <label for="modeloCarro">Modelo:</label>
+                <input type="text" id="modeloCarro" name="modelo" placeholder="Ex: Fiesta">
+        
+                <label for="marcaCarro">Marca:</label>
+                <input type="text" id="marcaCarro" name="marca" placeholder="Ex: Ford">
+           
+                <label for="anoCarro">Ano:</label>
+                <input type="text" id="anoCarro" name="ano" placeholder="Ex: 2000">
+           
+                <label for="quilometragem">Quilometragem:</label>
+                <input type="text" id="quilometragem" name="km" placeholder="Ex: 85.000 km">
+  
+                <label for="valorCarro">Valor:</label>
+                <input type="text" id="valorCarro" name="valor" placeholder="Ex: R$ 42.000">
+            </div>
+            <br>
+            <div>
+                <label for="usado">Carro usado</label>
+                <input type="radio" name="tipo" id="usado">
+
+                <label for="novo">Carro Novo</label>
+                <input type="radio" name="tipo" id="novo">
+            </div>
+            <br>
+            <div>
+                <label for="airbag">Airbag</label>
+                <input type="checkbox" name="adicionais" id="airbag">
+
+                <label for="alarme">Alarme</label>
+                <input type="checkbox" name="adicionais" id="alarme">
+
+                <label for="arCondicionado">Ar Condicionado</label>
+                <input type="checkbox" name="adicionais" id="arCondicionado">
+            </div>
+            <br>
+            <div>
+                <label for="placa">Final da placa</label>
+                <select name="finalPlaca" id="placa">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
