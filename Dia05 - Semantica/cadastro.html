@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="header">
+        <article class="searchSection headerPart">
+          <input type="text" id="headerSearch" />
+        </article>
+        <section class="navBar headerPart">
+          <a href="index.html" class="navOptions">Início</a>
+          <a href="categoria.html" class="navOptions">Categoria</a>
+          <a href="oferta.html" class="navOptions">Oferta do dia</a>
+          <a href="historico.html" class="navOptions">Historico</a>
+          <a href="moda.html" class="navOptions">Moda</a>
+        </section>
+      </section>
+      <h1>Cadastro</h1>
+      <section class="content">
+        <section class="register">
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="ex: João"><br><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="ex: joao@gmail.com"><br><br>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="ex: xxxxxxxx"><br><br>
+                <label for="confirmarSenha">Confirme a senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha"><br><br>
+                <label for="sexo">Sexo:</label>
+                <input type="radio" id="masculino" name="sexo" value="masculino">
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="feminino" name="sexo" value="feminino">
+                <label for="feminino">Feminino</label>
+                
+            </form>
+        </section>
+      </section>
+</body>
+</html>
