@@ -45,6 +45,15 @@ html {
 .navOptions{
     vertical-align: middle; /*centraliza se baseando na altura de line-height*/
     margin-left: 2vw;
+    text-decoration: none;
+    color: black;
+}
+
+.navOptions:hover{
+    transition-duration: 0.5s;
+    padding: 0.5%;
+    background-color: rgb(69, 69, 69);
+    border-radius: 5px;
 }
 
 .content{
@@ -53,15 +62,17 @@ html {
     height: 86vh;
 }
 
-.menu{
+.benefits{
     background-color: white;
-    width: 80vw;
     height: 15vh;
-    margin-top: 4vh;
-    display: inline-block;
     border-radius: 1vw;
 }
 
+.contents{
+    width: 80vw;
+    margin-top: 5vh;
+    display: inline-block;
+}
 .firstOffer, .offers{
     height: 15vh;
     width: 20vw;
@@ -80,3 +91,8 @@ html {
 .title, .subtitle{
     margin-left: 1vw;
 }
+
+.title-register, .register{
+    padding-top: 2vh;
+}
+
