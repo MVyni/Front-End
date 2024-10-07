@@ -73,6 +73,31 @@ html {
     margin-top: 5vh;
     display: inline-block;
 }
+
+.marketItem{
+    background-color: white;
+    float: left;
+    height: 235px;
+    width: 15vw;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    overflow: hidden;
+    transition: height 1s;
+    text-align: left;
+}
+
+.marketItem:hover{
+    transition-duration: 0.5s;
+    height: 330px;
+    transition-timing-function: linear;
+}
+
+.olderPrice{
+    color: grey;
+    text-decoration: line-through;
+    margin-left: 1vw;
+}
+
 .firstOffer, .offers{
     height: 15vh;
     width: 20vw;
@@ -85,7 +110,7 @@ html {
 }
 
 .title{
-    margin-top: 1vh;
+    margin-top: 3.5vh;
 }
 
 .title, .subtitle{
