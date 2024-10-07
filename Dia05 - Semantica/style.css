@@ -121,3 +121,6 @@ html {
     padding-top: 2vh;
 }
 
+.marketItem img{
+    border-bottom: 1px solid #ccc;
+}
