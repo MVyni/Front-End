@@ -28,6 +28,27 @@ body{
   margin-bottom: 4vh;
 }
 
+.text-box input{
+  height: 25px;
+  width: 200px;
+  margin-left: 5px;
+  padding: 10px;
+}
+
+.subtitle{
+  margin-top: 3vh;
+}
+.check-day, .check-time{
+  display: inline-block;
+  margin: 2vh auto;
+  margin-right: 2vw;
+}
+
+button {
+  width: 15vw;
+  padding: 4px;
+  margin-top: 5vh;
+}
 
 
  
