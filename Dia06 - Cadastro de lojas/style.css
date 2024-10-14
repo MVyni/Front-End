@@ -12,8 +12,8 @@ body{
 .container{
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: flex;  /* para conseguir organizar todos os intens dentro dele */
+  flex-direction: column; /* para os intens ficarem um debaixo do outro*/
   text-align: center;
 }
 
@@ -22,7 +22,7 @@ body{
 }
 
 .text-box{
-  display: inline-block;
+  display: inline-block; /* queria que os itens ficassem um do lado do outro*/
   justify-content: space-between;
   margin-right: 2vw;
   margin-bottom: 4vh;
@@ -49,6 +49,3 @@ button {
   padding: 4px;
   margin-top: 5vh;
 }
-
-
- 
