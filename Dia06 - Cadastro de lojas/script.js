@@ -40,3 +40,32 @@ btnTimeClosed.addEventListener('focus', (event) => {
 btnTimeClosed.addEventListener('blur', (event) => {
     event.target.style.border = '';
 }); //blur
+
+
+// LANÇANDO O NOME NO LOG DO CONSOLE COM O VALOR ATUALIZADO
+function salveName(texto){
+    window.sessionStorage.setItem('name', texto)
+}
+
+const nameStore = document.getElementById('name');
+
+nameStore.addEventListener('blur', (event) => {
+    console.log(event.target.value)
+})
+
+//LOG NO CONSOLE PARA O ADRESS
+const adressStore = document.getElementById('adress');
+
+adressStore.addEventListener('blur', (event) => {
+    console.log(event.target.value)
+})
+
+//LOG NO CONSOLE PARA AS CHECKBOX   
+const dayStore = document.querySelectorAll('input[type="checkbox"]');
+
+dayStore.forEach((checkbox) => {
+    checkbox.addEventListener('focus', (event) => {
+    console.log(event.target.value)
+// NECESSÁRIO CRIAR UM FOREACH PARA PASSAR POR TODAS AS CHECKBOXS QUE RECEBEREM O 'CLICK'
+    })
+})
