@@ -42,49 +42,66 @@ btnTimeClosed.addEventListener('blur', (event) => {
 }); //blur
 
 
-// LANÇANDO O NOME NO LOG DO CONSOLE COM O VALOR ATUALIZADO
-function salveName(texto){
-    window.sessionStorage.setItem('name', texto)
+// SALVANDO O NOME ATUALIZADO NO LOCAL STORAGE
+function saveName(texto){
+    window.localStorage.setItem('name', texto)
 }
 
 const nameStore = document.getElementById('name');
 
 nameStore.addEventListener('blur', (event) => {
-    console.log(event.target.value)
+    saveName(event.target.value)
 })
 
-//LOG NO CONSOLE PARA O ADRESS
+//SALVANDO O ADRESS ATUALIZADO NO LOCAL STORAGE
+function saveAdress(text){
+    window.localStorage.setItem('adress', text)
+}
 const adressStore = document.getElementById('adress');
 
 adressStore.addEventListener('blur', (event) => {
-    console.log(event.target.value)
+    saveAdress(event.target.value)
 })
 
-//LOG NO CONSOLE PARA AS CHECKBOX   
+//SALVANDO O VALOR ATUALIZADO NO LOCAL STORAGE
+function saveCheck(select) {
+    window.localStorage.setItem('check-day', select)
+} 
 const dayStore = document.querySelectorAll('input[type="checkbox"]');
 
+//FOREACH PARA PASSAR POR TODAS AS CHECKBOXS QUE RECEBEREM O 'CLICK'
 dayStore.forEach((checkbox) => {
     checkbox.addEventListener('focus', (event) => {
-    console.log(event.target.value)
-// NECESSÁRIO CRIAR UM FOREACH PARA PASSAR POR TODAS AS CHECKBOXS QUE RECEBEREM O 'CLICK'
+    saveCheck(event.target.value)
     })
+
+//CRIANDO REMOVE QUANDO O CHECK FOR DESMARCADO
+    function removeCheck(){
+        window.localStorage.removeItem('check-day')
+    }
 
     //CRIANDO UM CHECK PARA VER QUAIS AS CHECKBOXS ESTÃO MARCADAS
     checkbox.addEventListener('change', (event) => {
         if(!event.target.checked){
-            console.log(event.target.change);
+            removeCheck(event.target.change);
         } 
     })
 })
 
-//LOG NO CONSOLE PARA OS TYPE= 'TIME'
 
-const timeStore = document.querySelectorAll('input[type="time"]');
+//SALVANDO O VALOR ATUALIZADO DO OPEN STORE NO LOCAL STORAGE
+function saveTimeOpen(select){
+    window.localStorage.setItem('open-time', select)
+}
+const timeStoreOpen = document.getElementById('open');
 
-//--> CRIANDO FOR PARA PASSAR POR TODOS OS INPUT TYPE TIME <--//
+    timeStoreOpen.addEventListener('blur', (event) => { saveTimeOpen(event.target.value) });
 
-timeStore.forEach((time) => {
-    time.addEventListener('blur', (event) => {
-        console.log(event.target.value)
-    })
-})
+
+//SALVANDO O VALOR ATUALIZADO DO CLOSE STORE NO LOCAL STORAGE
+function saveTimeClosed(select){
+    window.localStorage.setItem('closed-time', select)
+}
+const timeStoreClosed = document.getElementById('closed');
+
+    timeStoreClosed.addEventListener('blur', (event) => { saveTimeClosed(event.target.value) });
