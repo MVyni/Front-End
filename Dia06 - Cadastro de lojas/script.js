@@ -68,4 +68,23 @@ dayStore.forEach((checkbox) => {
     console.log(event.target.value)
 // NECESSÁRIO CRIAR UM FOREACH PARA PASSAR POR TODAS AS CHECKBOXS QUE RECEBEREM O 'CLICK'
     })
+
+    //CRIANDO UM CHECK PARA VER QUAIS AS CHECKBOXS ESTÃO MARCADAS
+    checkbox.addEventListener('change', (event) => {
+        if(!event.target.checked){
+            console.log(event.target.change);
+        } 
+    })
+})
+
+//LOG NO CONSOLE PARA OS TYPE= 'TIME'
+
+const timeStore = document.querySelectorAll('input[type="time"]');
+
+//--> CRIANDO FOR PARA PASSAR POR TODOS OS INPUT TYPE TIME <--//
+
+timeStore.forEach((time) => {
+    time.addEventListener('blur', (event) => {
+        console.log(event.target.value)
+    })
 })
