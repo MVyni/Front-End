@@ -65,28 +65,39 @@ adressStore.addEventListener('blur', (event) => {
 
 //SALVANDO O VALOR ATUALIZADO NO LOCAL STORAGE
 function saveCheck(select) {
-    window.localStorage.setItem('check-day', select)
+    let checkDays = JSON.parse(window.localStorage.getItem('check-day')) || []; //ESSA VARIAVEL PEGA O VALOR QUE JA TIVER NO ARRAY NO LOCAL STORAGE OU CRIA UMA ARRAY
+    // JSON.parse() -> serve para pegar a string salva e transformar em uma array
+
+    if(!checkDays.includes(select)){
+        checkDays.push(select);
+    //CHECKANDO PARA NAO HAVER DUPLICAÇÃO E INSERINDO O VALOR NO ARRAY
+    }
+
+    window.localStorage.setItem('check-day', JSON.stringify(checkDays));
+    //SALVANDO O VALOR ATUALIZADO
+    // JSON.stringify -> serve para converter o array atualizado em uma string que será salva no local storage
 } 
-const dayStore = document.querySelectorAll('input[type="checkbox"]');
+
+//CRIANDO REMOVE QUANDO O CHECK FOR DESMARCADO
+    function removeCheck(select){
+        let checkDays = JSON.parse(window.localStorage.getItem('check-day')) || [];
+
+        checkDays = checkDays.filter(day => day !== select);
+        window.localStorage.setItem('check-day', JSON.stringify(checkDays));
+    }
+
+    const dayStore = document.querySelectorAll('input[type="checkbox"]');
 
 //FOREACH PARA PASSAR POR TODAS AS CHECKBOXS QUE RECEBEREM O 'CLICK'
 dayStore.forEach((checkbox) => {
-    checkbox.addEventListener('focus', (event) => {
-    saveCheck(event.target.value)
-    })
-
-//CRIANDO REMOVE QUANDO O CHECK FOR DESMARCADO
-    function removeCheck(){
-        window.localStorage.removeItem('check-day')
-    }
-
-    //CRIANDO UM CHECK PARA VER QUAIS AS CHECKBOXS ESTÃO MARCADAS
     checkbox.addEventListener('change', (event) => {
-        if(!event.target.checked){
-            removeCheck(event.target.change);
-        } 
+    if(event.target.checked){
+        saveCheck(event.target.value)
+    } else {
+        removeCheck(event.target.value)
+    }
     })
-})
+});
 
 
 //SALVANDO O VALOR ATUALIZADO DO OPEN STORE NO LOCAL STORAGE
