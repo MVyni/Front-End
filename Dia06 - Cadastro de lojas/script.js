@@ -116,3 +116,38 @@ function saveTimeClosed(select){
 const timeStoreClosed = document.getElementById('closed');
 
     timeStoreClosed.addEventListener('blur', (event) => { saveTimeClosed(event.target.value) });
+
+//PREENCHENDO CAMPOS AUTOMATICAMENTE
+function preencher(){
+const nome = window.localStorage.getItem('name'); //FAZ COM QUE BUSQUE O VALOR NO LOCAL STORAGE
+
+if(nome){
+    document.getElementById('name').value = nome;
+}
+
+const endereco = window.localStorage.getItem('adress');
+if(endereco){
+    document.getElementById('adress').value = endereco;
+}
+
+const horaAbertura = window.localStorage.getItem('open-time');
+if(horaAbertura){
+    document.getElementById('open').value = horaAbertura
+}
+
+const horaFechamento = window.localStorage.getItem('closed-time')
+if(horaFechamento){
+    document.getElementById('closed').value = horaFechamento
+}
+
+const checkDays = JSON.parse(window.localStorage.getItem('check-day')) || [];
+
+checkDays.forEach(day => {
+    const checkbox = document.querySelectorAll(`input[type="checkbox"][value="${day}"]`);
+    if(checkbox){
+        checkbox.checked = true;
+    }
+})
+}
+
+window.onload = preencher
