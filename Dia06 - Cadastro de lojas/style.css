@@ -22,7 +22,7 @@ body{
 }
 
 .text-box{
-  display: inline-block; /* queria que os itens ficassem um do lado do outro*/
+  display: inline-block; /* para que os itens fiquem um do lado do outro*/
   justify-content: space-between;
   margin-right: 2vw;
   margin-bottom: 4vh;
@@ -48,4 +48,26 @@ button {
   width: 15vw;
   padding: 4px;
   margin-top: 5vh;
+}
+
+@media (max-width: 400px){
+  .text-box{
+    display: block;
+    margin-right: 2vw;
+    margin-bottom: 4vh;
+  }
+
+  .check-day, .check-time{
+    display: block;
+    margin: 2vh auto;
+    margin-right: 2vw;
+  }
+
+  .text-box input, .check-time input{
+    width: 100vw;
+    height: 25px;
+    margin-left: 5px;
+    padding: 10px;
+    text-align: center;
+  }
 }
